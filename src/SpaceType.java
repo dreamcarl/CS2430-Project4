@@ -1,4 +1,3 @@
-package src;
 /**
  * This class represents the different types of spaces on a monopoly board.
  */
