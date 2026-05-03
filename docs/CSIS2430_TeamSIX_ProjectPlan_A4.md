@@ -1,4 +1,4 @@
-# CSIS 2430 — Project One Plan
+# CSIS 2430: Project Four Plan
 
 ## 1. Project Information
 
@@ -15,8 +15,6 @@
 
 ## 2. Team & Roles
 
-*Roles are assigned per project and rotate between projects.*
-
 | Team Member | Role | Primary Responsibilities | 
 |---|---|---|
 | Carlos Recinos | Implementation Lead | Owns core algorithm implementation; integrates modules; maintains main branch health. | 
@@ -26,7 +24,6 @@
 ---
 
 ## 3. Repository & Access
-
 
 | Item | Value |
 |---|---|
@@ -40,7 +37,6 @@
 
 ## 4. Milestones (Timeline)
 
-Define 4–6 milestones. Each milestone has a definition of done.
 **Status legend:** NS = Not Started · IP = In Progress · D = Done
 
 | Milestone | Target Date | Owner | Definition of Done | Status | Evidence |
