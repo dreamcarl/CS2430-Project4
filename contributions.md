@@ -27,8 +27,11 @@
 * **Responsibilities**
     * Authored the UML Diagram
     * Validate code by identifying and verifying edge cases and expected outputs
+    * Put Monopoly board and card data in a Google Spreadsheet
 * **Evidence Pointers:**
     * docs/Project4UMLDiagram.pdf - Author (See ProjectPlan / Trello)
+    * test/ExperimentTests.java - Author
+    * [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1QAFWPxKqL-6t7XhohxY5jwx3AOVIkGFR85l5kpHmMNE/edit?usp=sharing) - Author
 
 
 ### Nelson Long
