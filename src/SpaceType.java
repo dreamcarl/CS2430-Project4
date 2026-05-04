@@ -1,3 +1,12 @@
+/*
+ * Team Name - Team SIX!
+ * Team Members - Carlos Recinos, Nelson Long, & Christopher Reynolds
+ * CS-2430-502-Spring 2026
+ * Programming Project 4 - Capstone
+ * @author Carlos Recinos (Primary Author)
+ * @author Nelson Long (Secondary Author)
+ * @author Christopher Reynolds (Secondary Author)
+ */
 package src;
 
 /**

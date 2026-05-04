@@ -1,3 +1,12 @@
+/**
+ * Team Name - Team SIX!
+ * Team Members - Carlos Recinos, Nelson Long, & Christopher Reynolds
+ * CS-2430-502-Spring 2026
+ * Programming Project 4 - Capstone
+ * @author Carlos Recinos (Primary Author)
+ * @author Nelson Long (Secondary Author)
+ * @author Christopher Reynolds (Secondary Author)
+ */
 package src;
 import java.util.Random;
 
@@ -44,6 +53,7 @@ public class Player{
             takeRegularTurn();
         }
         consecutiveDoubles = 0;
+        board.recordTurn();
     }
 
     //This method represents a valid turn and jail if doubles are rolled 3 consecutive times 
@@ -169,6 +179,7 @@ public class Player{
             } else if(type == SpaceType.COMMUNITY_CHEST){
                 resolving = resolveCommunityChestCard(board.drawCommunityChest());
             } else if(type == SpaceType.GO_TO_JAIL){
+                board.recordLanding(currentPosition); //record landing on Go To Jail square before being sent to Jail
                 sendToJail();
             }
         }

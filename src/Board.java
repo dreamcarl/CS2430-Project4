@@ -1,3 +1,13 @@
+/*
+ * Team Name - Team SIX!
+ * Team Members - Carlos Recinos, Nelson Long, & Christopher Reynolds
+ * CS-2430-502-Spring 2026
+ * Programming Project 4 - Capstone
+ * @author Carlos Recinos (Primary Author)
+ * @author Nelson Long (Secondary Author)
+ * @author Christopher Reynolds (Secondary Author)
+ */
+
 package src;
 
 import java.util.ArrayList;
@@ -15,23 +25,30 @@ public class Board{
     private int totalMoves;
     SpaceType spaceType;
     public static final int BOARD_SIZE = 40;
-    //Constants to reference board positions
     public static final int GO_INDEX = 0;
     public static final int JAIL_INDEX = 10;
     public static final int GO_TO_JAIL_INDEX = 30;
 
-    //This class represents a single square on the board
+    /**
+     * This class represents a single square on the board.
+     */
     private static class Space{
         int index;
         String name;
         SpaceType type;
 
-        //Constructor initializes the properties of the square object
+        /**
+         * Constructor Initializes the properties of the square object
+         * @param index Indicates the position of the space on Board.
+         * @param name The name of the Space.
+         * @param type The type of the Space as indicated from the `SpaceType Enum`.
+         */
         public Space(int index, String name, SpaceType type){
             this.index = index;
             this.name = name;
             this.type = type;
         }
+
         //Getters and setters for space objects
         public int getIndex(){
             return index;
@@ -44,7 +61,7 @@ public class Board{
         }
     }
 
-    //intializes array for the 40 squares
+
     private Space[] spaces = new Space[BOARD_SIZE];
 
     //Counter to keep track total number of unique space landings
@@ -62,7 +79,10 @@ public class Board{
         initializeDecks();
     }
 
-    //Initialization of each space on the board with its index, name and space type
+
+    /**
+     *  Creates the Board with the Index, Name, and SpaceType
+     */
     private void initializeBoard(){
         spaces[0] = new Space(0, "Go", SpaceType.GO);
         spaces[1] = new Space(1, "Mediterranean Avenue", SpaceType.PROPERTY);
@@ -106,44 +126,44 @@ public class Board{
         spaces[39] = new Space(39, "Boardwalk", SpaceType.PROPERTY);
     }
 
-    //This enum class will help identify the type of chance card for later resolving
+    /** A list representing the various chance cards in the Deck.*/
     public enum ChanceCard{
-        ADVANCE_TO_BOARDWALK,              // Advance to Boardwalk
-        ADVANCE_TO_GO,                     // Advance to Go 
-        ADVANCE_TO_ILLINOIS_AVENUE,        // Advance to Illinois Avenue
-        ADVANCE_TO_ST_CHARLES_PLACE,       // Advance to St. Charles Place
-        ADVANCE_TO_NEAREST_RAILROAD_ONE,   // Advance to nearest Railroad
-        ADVANCE_TO_NEAREST_RAILROAD_TWO,   // Advance to nearest Railroad pt.2
-        ADVANCE_TO_NEAREST_UTILITY,        // Advance token to nearest Utility
-        BANK_DIVIDEND,                     // Bank pays you dividend of $0
-        GET_OUT_OF_JAIL_FREE,              // Get Out of Jail Free Card
-        GO_BACK_THREE_SPACES,              // Go Back 3 Spaces
-        GO_TO_JAIL,                        // Go to jail immediately
-        GENERAL_REPAIRS,                   // Make general repairs on all your property
-        SPEEDING_FINE,                     // Speeding fine $0
-        ADVANCE_TO_READING_RAILROAD,       // Take a trip to Reading Railroad
-        CHAIRMAN_OF_THE_BOARD,             // Pay each player $0
-        BUILDING_LOAN_MATURES              // Your building loan matures
+        ADVANCE_TO_BOARDWALK,
+        ADVANCE_TO_GO,
+        ADVANCE_TO_ILLINOIS_AVENUE,
+        ADVANCE_TO_ST_CHARLES_PLACE,
+        ADVANCE_TO_NEAREST_RAILROAD_ONE,
+        ADVANCE_TO_NEAREST_RAILROAD_TWO,
+        ADVANCE_TO_NEAREST_UTILITY,
+        BANK_DIVIDEND,
+        GET_OUT_OF_JAIL_FREE,
+        GO_BACK_THREE_SPACES,
+        GO_TO_JAIL,
+        GENERAL_REPAIRS,
+        SPEEDING_FINE,
+        ADVANCE_TO_READING_RAILROAD,
+        CHAIRMAN_OF_THE_BOARD,
+        BUILDING_LOAN_MATURES
     }
 
-    //This enum class will help identify the type of community chest card for later keepResolving
+    /** A list representing the various community chest cards */
     public enum CommunityChestCard{
-        ADVANCE_TO_GO,                     // Advance to Go 
-        BANK_ERROR,                        // Bank error in your favor
-        DOCTORS_FEE,                       // Doctor's fee
-        SALE_OF_STOCK,                     // From sale of stock you get $0
-        GET_OUT_OF_JAIL_FREE,              // Get Out of Jail Free
-        GO_TO_JAIL,                        // Go to jail immediately
-        HOLIDAY_FUND,                      // Holiday fund matures
-        INCOME_TAX_REFUND,                 // Income tax refund
-        BIRTHDAY,                          // It is your birthday
-        LIFE_INSURANCE,                    // Life insurance matures
-        HOSPITAL_FEES,                     // Pay hospital fees
-        SCHOOL_FEES,                       // Pay school fees
-        CONSULTANCY_FEE,                   // Receive $0 consultancy fee
-        STREET_REPAIRS,                    // You are assessed for street repair
-        BEAUTY_CONTEST,                    // You have won second prize in a beauty contest
-        INHERITANCE                        // You inherit $0
+        ADVANCE_TO_GO,
+        BANK_ERROR,
+        DOCTORS_FEE,
+        SALE_OF_STOCK,
+        GET_OUT_OF_JAIL_FREE,
+        GO_TO_JAIL,
+        HOLIDAY_FUND,
+        INCOME_TAX_REFUND,
+        BIRTHDAY,
+        LIFE_INSURANCE,
+        HOSPITAL_FEES,
+        SCHOOL_FEES,
+        CONSULTANCY_FEE,
+        STREET_REPAIRS,
+        BEAUTY_CONTEST,
+        INHERITANCE
     }
 
     //Fills both decks with their respective cards
@@ -207,10 +227,14 @@ public class Board{
         Collections.shuffle(communityChestDeck);
     }
 
-    //Adds landing spot to running total for tracking
+    //Adds landing spot to the counter for the given square (does not count as a turn)
     public void recordLanding(int index){
         int safeIndex = checkBound(index);
         landingCounter[safeIndex]++;
+    }
+
+    //Increments the turn counter by one; called once per takeTurn() in Player
+    public void recordTurn(){
         totalMoves++;
     }
 
