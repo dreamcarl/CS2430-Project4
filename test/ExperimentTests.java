@@ -1,3 +1,11 @@
+/**
+ * Team Name - Team SIX!
+ * Team Members - Carlos Recinos, Nelson Long, & Christopher Reynolds
+ * CS-2430-502-Spring 2026
+ * Programming Project 4 - Capstone
+ * @author Christopher Reynolds (ExperimentTests.java)
+ */
+
 package test;
 
 import static org.junit.Assert.assertEquals;
