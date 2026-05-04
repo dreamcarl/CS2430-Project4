@@ -49,3 +49,7 @@
 * **Evidence Pointers:**
     * docs/CSIS2430_TeamSIX_ProjectPlan_A4.md - Author 
     * commit 12455f6
+    * README.md - Author
+    * contributions - Author
+    * Project Report - Co-Author
+    * Project Video - Compiled and participated
