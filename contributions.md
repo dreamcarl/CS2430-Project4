@@ -42,6 +42,7 @@
   * Coordinated the final submission and video
   * Verified correct documentation for Classes 
   * Help Author the Project Report
+  * Helped implement Simulations & Run Summary
 * **Evidence Pointers:**
     * docs/CSIS2430_TeamSIX_ProjectPlan_A4.md - Author 
-    * 
+    * commit 12455f6
